@@ -17,3 +17,26 @@ debug.log
 tests/reftests.js
 *.log
 .rpt2_cache
+
+# Modern build artifacts
+*.tsbuildinfo
+.cache/
+.vitest/
+
+# OS files
+Thumbs.db
+
+# Editor files
+.vscode/settings.json
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Husky (will add later)
+.husky/_/
+
+# Bun
+bun.lockb

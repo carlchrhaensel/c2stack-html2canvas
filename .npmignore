@@ -15,7 +15,6 @@ tmp/
 .editorconfig
 .eslintrc
 .npmignore
-.prettierrc
 jest.config.js
 karma.conf.js
 karma.js

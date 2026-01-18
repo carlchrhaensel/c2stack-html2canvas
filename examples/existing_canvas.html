@@ -39,8 +39,8 @@
     ctx.arc(90,65,5,0,Math.PI*2,true);  // Right eye
     ctx.stroke();
 
-    document.querySelector("button").addEventListener("click", function() {
-        html2canvas(document.querySelector("#content"), {canvas: canvas, scale: 1}).then(function(canvas) {
+    document.querySelector("button").addEventListener("click", () => {
+        html2canvas(document.querySelector("#content"), {canvas: canvas, scale: 1}).then((canvas) => {
             console.log('Drew on the existing canvas');
         });
     }, false);

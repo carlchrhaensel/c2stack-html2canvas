@@ -1,23 +1,23 @@
 class AutonomousCustomElement extends HTMLElement {
-    constructor() {
-        super();
+	constructor() {
+		super();
 
-        const shadow = this.attachShadow({mode: 'open'});
-        const wrapper = document.createElement('span');
-        wrapper.setAttribute('class', 'wrapper');
+		const shadow = this.attachShadow({mode: 'open'});
+		const wrapper = document.createElement('span');
+		wrapper.setAttribute('class', 'wrapper');
 
-        const info = document.createElement('span');
-        info.setAttribute('class', 'info');
+		const info = document.createElement('span');
+		info.setAttribute('class', 'info');
 
-        info.textContent = this.getAttribute('text');
+		info.textContent = this.getAttribute('text');
 
-        const img = document.createElement('img');
-        img.src = this.getAttribute('img');
+		const img = document.createElement('img');
+		img.src = this.getAttribute('img');
 
-        // Create some CSS to apply to the shadow dom
-        const style = document.createElement('style');
+		// Create some CSS to apply to the shadow dom
+		const style = document.createElement('style');
 
-        style.textContent = `
+		style.textContent = `
       .wrapper {
         position: relative;
       }
@@ -35,15 +35,15 @@ class AutonomousCustomElement extends HTMLElement {
       }
     `;
 
-        shadow.appendChild(style);
-        shadow.appendChild(wrapper);
-        wrapper.appendChild(img);
-        wrapper.appendChild(info);
-    }
+		shadow.appendChild(style);
+		shadow.appendChild(wrapper);
+		wrapper.appendChild(img);
+		wrapper.appendChild(info);
+	}
 
-    connectedCallback() {
-        this.shadowRoot.adoptedStyleSheets = [sheet];
-    }
+	connectedCallback() {
+		this.shadowRoot.adoptedStyleSheets = [sheet];
+	}
 }
 
 customElements.define('autonomous-custom-element', AutonomousCustomElement);

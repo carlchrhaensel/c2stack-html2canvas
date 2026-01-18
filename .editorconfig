@@ -1,4 +1,5 @@
 # http://editorconfig.org
+# EditorConfig helps maintain consistent coding styles across editors and IDEs
 
 root = true
 
@@ -7,11 +8,37 @@ charset = utf-8
 end_of_line = lf
 trim_trailing_whitespace = true
 insert_final_newline = true
-
 indent_style = space
 indent_size = 4
+max_line_length = 120
 
-[{*.yml,package.json}]
-# The indent size used in the `package.json` file cannot be changed
-# https://github.com/npm/npm/pull/3180#issuecomment-16336516
+# TypeScript and JavaScript
+[*.{ts,tsx,js,jsx,mjs,cjs}]
+indent_style = tab
+indent_size = 4
+quote_type = single
+
+# JSON files
+[{*.json,*.jsonc,.babelrc,.eslintrc}]
+indent_style = tab
 indent_size = 2
+
+# YAML files
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# Package files
+[{package.json,package-lock.json,bun.lockb}]
+indent_style = tab
+indent_size = 2
+
+# Config files
+[{*.config.ts,*.config.js,rollup.config.ts,vitest.config.ts,playwright.config.ts}]
+indent_style = tab
+indent_size = 4

@@ -9,7 +9,7 @@
                 var container = document.querySelector('#test');
                 container.innerHTML = '';
 
-                ['arial','verdana','courier new'].forEach(function(e) {
+                ['arial','verdana','courier new'].forEach((e) => {
                     var div = document.createElement('div');
                     div.style.fontFamily = e;
                     container.appendChild(div);
