@@ -83,6 +83,7 @@
 		"test:browser": "playwright test",
 		"reftests-diff": "bun scripts/prepare-reftests.ts && vitest run --config vitest.config.ts tests/reftest-diff.ts",
 		"start": "bun tests/server.ts --port=8080 --cors=8081",
+		"postinstall": "bun scripts/patch-toidentifier.js",
 		"prepare": "husky"
 	},
 	"homepage": "https://html2canvas.hertzen.com",
