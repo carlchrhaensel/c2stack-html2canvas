@@ -1,6 +1,6 @@
 // Patch for Express dependencies compatibility with Bun
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 
 // Patch toidentifier
 const toidentifierPath = path.join(__dirname, '..', 'node_modules', 'toidentifier', 'index.js');

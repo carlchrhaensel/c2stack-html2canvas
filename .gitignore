@@ -17,6 +17,8 @@ debug.log
 tests/reftests.js
 *.log
 .rpt2_cache
+playwright-report/
+test-results
 
 # Modern build artifacts
 *.tsbuildinfo
