@@ -181,13 +181,13 @@ jobs:
         run: sudo xcode-select -s "${{ matrix.config.xcode }}"
       - name: Run browser tests
         if: ${{ matrix.config.xvfb != true }}
-        run: bun run karma
+        run: bun run test:browser
       - name: Start Xvfb
         if: ${{ matrix.config.xvfb == true }}
         run: Xvfb :99 &
       - name: Run browser tests
         if: ${{ matrix.config.xvfb == true }}
-        run: DISPLAY=:99 bun run karma
+        run: DISPLAY=:99 bun run test:browser
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
         with:

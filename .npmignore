@@ -16,6 +16,4 @@ tmp/
 .eslintrc
 .npmignore
 jest.config.js
-karma.conf.js
-karma.js
 rollup.config.ts
