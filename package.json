@@ -1,6 +1,6 @@
 {
-	"title": "html2canvas",
-	"name": "html2canvas",
+	"title": "@c2stack/html2canvas",
+	"name": "@c2stack/html2canvas",
 	"description": "Screenshots with JavaScript",
 	"version": "1.4.1",
 	"type": "module",
@@ -17,21 +17,16 @@
 		"./package.json": "./package.json"
 	},
 	"sideEffects": false,
-	"author": {
-		"name": "Niklas von Hertzen",
-		"email": "niklasvh@gmail.com",
-		"url": "https://hertzen.com"
-	},
 	"engines": {
 		"bun": ">=1.0.0"
 	},
 	"packageManager": "bun@1.1.42",
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:niklasvh/html2canvas.git"
+		"url": "git@github.com:carlchrhaensel/c2stack-html2canvas.git"
 	},
 	"bugs": {
-		"url": "https://github.com/niklasvh/html2canvas/issues"
+		"url": "https://github.com/carlchrhaensel/c2stack-html2canvas/issues"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.11",
