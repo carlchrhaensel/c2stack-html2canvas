@@ -1,4 +1,4 @@
-import {rmSync, mkdirSync} from 'node:fs';
+import {mkdirSync, rmSync} from 'node:fs';
 import {resolve} from 'node:path';
 
 // Clean and recreate build directories

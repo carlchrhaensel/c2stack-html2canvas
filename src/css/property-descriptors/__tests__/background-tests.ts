@@ -1,5 +1,5 @@
 import {deepStrictEqual} from 'node:assert';
-import {beforeEach, describe, it, vi } from 'vitest';
+import {beforeEach, describe, it, vi} from 'vitest';
 import {Parser} from '../../syntax/parser';
 import {deg} from '../../types/angle';
 import {pack} from '../../types/color';
