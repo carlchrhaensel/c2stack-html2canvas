@@ -41,7 +41,7 @@ const matrix3d = (args: CSSValue[]): Transform => {
 		.filter((arg): arg is NumberValueToken => arg.type === TokenType.NUMBER_TOKEN)
 		.map((arg) => arg.number);
 
-	const [a1, b1, {}, {}, a2, b2, {}, {}, {}, {}, {}, {}, a4, b4, {}, {}] = values;
+	const [a1, b1, , , a2, b2, , , , , , , a4, b4] = values;
 
 	return values.length === 16 ? [a1, b1, a2, b2, a4, b4] : null;
 };

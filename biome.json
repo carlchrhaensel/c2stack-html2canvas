@@ -12,7 +12,8 @@
 				"noExplicitAny": "off",
 				"noAssignInExpressions": "off",
 				"noImplicitAnyLet": "off",
-				"noDebugger": "off"
+				"noDebugger": "off",
+				"useIterableCallbackReturn": "off"
 			},
 			"style": {
 				"useConst": "error"
@@ -20,10 +21,15 @@
 			"complexity": {
 				"noStaticOnlyClass": "off",
 				"noBannedTypes": "off",
-				"noUselessSwitchCase": "off"
+				"noUselessSwitchCase": "off",
+				"noCommaOperator": "off"
 			},
 			"correctness": {
-				"noSelfAssign": "off"
+				"noSelfAssign": "off",
+				"noInnerDeclarations": "off"
+			},
+			"a11y": {
+				"useGenericFontNames": "off"
 			}
 		}
 	},
