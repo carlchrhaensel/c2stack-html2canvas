@@ -87,7 +87,7 @@ export class DocumentCloner {
          */
 
 		const iframeLoad = iframeLoader(iframe).then(async () => {
-			this.scrolledElements.forEach(restoreNodeScroll);
+			this.scrolledElements.forEach(([element, x, y]) => restoreNodeScroll([element as HTMLElement, x, y]));
 			if (cloneWindow) {
 				cloneWindow.scrollTo(windowSize.left, windowSize.top);
 				if (
@@ -196,7 +196,7 @@ export class DocumentCloner {
 		} catch (e) {
 			// accessing node.sheet.cssRules throws a DOMException
 			this.context.logger.error('Unable to access cssRules property', e);
-			if (e.name !== 'SecurityError') {
+			if (e instanceof Error && e.name !== 'SecurityError') {
 				throw e;
 			}
 		}

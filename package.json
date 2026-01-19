@@ -17,6 +17,11 @@
 		"./package.json": "./package.json"
 	},
 	"sideEffects": false,
+	"author": {
+		"name": "c2stack",
+		"email": "info@cchaensel.de",
+		"url": "https://cchaensel.de"
+	},
 	"engines": {
 		"bun": ">=1.0.0"
 	},
