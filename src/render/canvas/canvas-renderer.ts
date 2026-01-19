@@ -310,7 +310,7 @@ export class CanvasRenderer extends Renderer {
 			try {
 				const image = await this.context.cache.match(container.src);
 				this.renderReplacedElement(container, curves, image);
-			} catch (e) {
+			} catch (_e) {
 				this.context.logger.error(`Error loading image ${container.src}`);
 			}
 		}
@@ -323,7 +323,7 @@ export class CanvasRenderer extends Renderer {
 			try {
 				const image = await this.context.cache.match(container.svg);
 				this.renderReplacedElement(container, curves, image);
-			} catch (e) {
+			} catch (_e) {
 				this.context.logger.error(`Error loading svg ${container.svg.substring(0, 255)}`);
 			}
 		}
@@ -446,7 +446,7 @@ export class CanvasRenderer extends Renderer {
 					try {
 						image = await this.context.cache.match(url);
 						this.ctx.drawImage(image, container.bounds.left - (image.width + 10), container.bounds.top);
-					} catch (e) {
+					} catch (_e) {
 						this.context.logger.error(`Error loading list-style-image ${url}`);
 					}
 				}
@@ -596,7 +596,7 @@ export class CanvasRenderer extends Renderer {
 				const url = (backgroundImage as CSSURLImage).url;
 				try {
 					image = await this.context.cache.match(url);
-				} catch (e) {
+				} catch (_e) {
 					this.context.logger.error(`Error loading background-image ${url}`);
 				}
 

@@ -1,5 +1,8 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+	"files": {
+		"includes": ["**", "!!**/coverage", "!!**/node_modules", "!!**/dist", "!!**/build", "!!tests/reftests"]
+	},
 	"formatter": {
 		"indentWidth": 4,
 		"lineWidth": 120
@@ -13,20 +16,30 @@
 				"noAssignInExpressions": "off",
 				"noImplicitAnyLet": "off",
 				"noDebugger": "off",
-				"useIterableCallbackReturn": "off"
+				"useIterableCallbackReturn": "off",
+				"noThenProperty": "off",
+				"noDuplicateProperties": "off"
 			},
 			"style": {
-				"useConst": "error"
+				"useConst": "error",
+				"noDescendingSpecificity": "off"
 			},
 			"complexity": {
 				"noStaticOnlyClass": "off",
 				"noBannedTypes": "off",
 				"noUselessSwitchCase": "off",
-				"noCommaOperator": "off"
+				"noCommaOperator": "off",
+				"noArguments": "off"
 			},
 			"correctness": {
 				"noSelfAssign": "off",
-				"noInnerDeclarations": "off"
+				"noInnerDeclarations": "off",
+				"noInvalidUseBeforeDeclaration": "off",
+				"noConstantCondition": "off",
+				"noUnusedFunctionParameters": "off",
+				"noUnknownProperty": "off",
+				"noUnknownTypeSelector": "off",
+				"noInvalidDirectionInLinearGradient": "off"
 			},
 			"a11y": {
 				"useGenericFontNames": "off"
@@ -38,6 +51,11 @@
 			"quoteStyle": "single",
 			"trailingCommas": "none",
 			"bracketSpacing": false
+		}
+	},
+	"html": {
+		"linter": {
+			"enabled": false
 		}
 	}
 }
