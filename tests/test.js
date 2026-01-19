@@ -34,7 +34,7 @@ var REFTEST = window.location.search.indexOf('reftest') !== -1;
 					timer = date.getTime();
 				options = options || {};
 				var promise = html2canvas(this[0], options);
-				promise['catch']((err) => {
+				promise.catch((err) => {
 					console.log('html2canvas threw an error', err);
 				});
 
@@ -58,20 +58,20 @@ var REFTEST = window.location.search.indexOf('reftest') !== -1;
 								$canvas.toggle().siblings().toggle();
 								$(document.documentElement).css('background', $canvas.is(':visible') ? 'none' : '');
 								$(document.body).css('background', $canvas.is(':visible') ? 'none' : '');
-								throwMessage('Canvas Render ' + ($canvas.is(':visible') ? 'visible' : 'hidden'));
+								throwMessage(`Canvas Render ${$canvas.is(':visible') ? 'visible' : 'hidden'}`);
 								$(window).scrollTop(scrollTop);
 							}
 						});
 						$(document.documentElement).css('background', $canvas.is(':visible') ? 'none' : '');
 						$(document.body).css('background', $canvas.is(':visible') ? 'none' : '');
-						throwMessage('Screenshot created in ' + (finishTime.getTime() - timer) + ' ms<br />', 4000);
+						throwMessage(`Screenshot created in ${finishTime.getTime() - timer} ms<br />`, 4000);
 					} else {
 						$canvas.css('display', 'none');
 					}
 					// test if canvas is read-able
 					try {
 						$canvas[0].toDataURL();
-					} catch (e) {
+					} catch (_e) {
 						if ($canvas[0].nodeName.toLowerCase() === 'canvas') {
 							// TODO, maybe add a bit less offensive way to present this, but still something that can easily be noticed
 							window.alert('Canvas is tainted, unable to read data');

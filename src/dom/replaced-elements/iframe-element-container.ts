@@ -17,11 +17,7 @@ export class IFrameElementContainer extends ElementContainer {
 		this.height = parseInt(iframe.height, 10) || 0;
 		this.backgroundColor = this.styles.backgroundColor;
 		try {
-			if (
-				iframe.contentWindow &&
-				iframe.contentWindow.document &&
-				iframe.contentWindow.document.documentElement
-			) {
+			if (iframe.contentWindow?.document?.documentElement) {
 				this.tree = parseTree(context, iframe.contentWindow.document.documentElement);
 
 				// http://www.w3.org/TR/css3-background/#special-backgrounds
@@ -44,6 +40,6 @@ export class IFrameElementContainer extends ElementContainer {
 						: bodyBackgroundColor
 					: documentBackgroundColor;
 			}
-		} catch (e) {}
+		} catch (_e) {}
 	}
 }

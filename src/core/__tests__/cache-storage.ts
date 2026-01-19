@@ -1,4 +1,4 @@
-import {deepStrictEqual, fail} from 'assert';
+import {deepStrictEqual, fail} from 'node:assert';
 import {Bounds} from '../../css/layout/bounds';
 import {CacheStorage} from '../cache-storage';
 import {Context} from '../context';
@@ -244,7 +244,7 @@ describe('cache-storage', () => {
 			try {
 				await cache.match('http://html2canvas.hertzen.com/test.jpg');
 				fail('Expected result to timeout');
-			} catch (e) {}
+			} catch (_e) {}
 		});
 	});
 
@@ -268,6 +268,6 @@ describe('cache-storage', () => {
 		try {
 			await cache.match('http://example.com/test.jpg');
 			fail('Expected result to timeout');
-		} catch (e) {}
+		} catch (_e) {}
 	});
 });

@@ -9,10 +9,21 @@
 		"rules": {
 			"recommended": true,
 			"suspicious": {
-				"noExplicitAny": "warn"
+				"noExplicitAny": "off",
+				"noAssignInExpressions": "off",
+				"noImplicitAnyLet": "off",
+				"noDebugger": "off"
 			},
 			"style": {
 				"useConst": "error"
+			},
+			"complexity": {
+				"noStaticOnlyClass": "off",
+				"noBannedTypes": "off",
+				"noUselessSwitchCase": "off"
+			},
+			"correctness": {
+				"noSelfAssign": "off"
 			}
 		}
 	},

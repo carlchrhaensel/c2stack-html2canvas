@@ -1,7 +1,7 @@
-import {existsSync, promises} from 'fs';
+import {existsSync, promises} from 'node:fs';
+import {basename, resolve} from 'node:path';
 import {sync} from 'glob';
 import {toMatchImageSnapshot} from 'jest-image-snapshot';
-import {basename, resolve} from 'path';
 
 const resultsDir = resolve(__dirname, '../results');
 const customSnapshotsDir = resolve(__dirname, '../tmp/snapshots');

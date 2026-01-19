@@ -1,5 +1,5 @@
 const PseudoNodeContent = require('../../dist/npm/PseudoNodeContent');
-const assert = require('assert');
+const assert = require('node:assert');
 
 describe('PseudoNodeContent', () => {
 	it('should parse string', () => {

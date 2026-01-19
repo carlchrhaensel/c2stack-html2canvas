@@ -43,7 +43,7 @@ customElements.define(
 			}
 
 			const slots = this.shadowRoot.querySelectorAll('slot');
-			slots[1].addEventListener('slotchange', (e) => {
+			slots[1].addEventListener('slotchange', (_e) => {
 				const nodes = slots[1].assignedNodes();
 				console.log(`Element in Slot "${slots[1].name}" changed to "${nodes[0].outerHTML}".`);
 			});

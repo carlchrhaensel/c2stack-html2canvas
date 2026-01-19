@@ -87,7 +87,7 @@ export class DocumentCloner {
          */
 
 		const iframeLoad = iframeLoader(iframe).then(async () => {
-			this.scrolledElements.forEach(([element, x, y]) => restoreNodeScroll([element as HTMLElement, x, y]));
+			this.scrolledElements.forEach(([element, x, y]) => void restoreNodeScroll([element as HTMLElement, x, y]));
 			if (cloneWindow) {
 				cloneWindow.scrollTo(windowSize.left, windowSize.top);
 				if (
@@ -112,7 +112,7 @@ export class DocumentCloner {
 				return Promise.reject(`Error finding the ${this.referenceElement.nodeName} in the cloned document`);
 			}
 
-			if (documentClone.fonts && documentClone.fonts.ready) {
+			if (documentClone.fonts?.ready) {
 				await documentClone.fonts.ready;
 			}
 
@@ -141,7 +141,7 @@ export class DocumentCloner {
 
 	createElementClone<T extends HTMLElement | SVGElement>(node: T): HTMLElement | SVGElement {
 		if (isDebugging(node, DebuggerType.CLONE)) {
-			debugger;
+			// debugger;
 		}
 		if (isCanvasElement(node)) {
 			return this.createCanvasClone(node);
@@ -182,7 +182,7 @@ export class DocumentCloner {
 	createStyleClone(node: HTMLStyleElement): HTMLStyleElement {
 		try {
 			const sheet = node.sheet as CSSStyleSheet | undefined;
-			if (sheet && sheet.cssRules) {
+			if (sheet?.cssRules) {
 				const css: string = [].slice.call(sheet.cssRules, 0).reduce((css: string, rule: CSSRule) => {
 					if (rule && typeof rule.cssText === 'string') {
 						return css + rule.cssText;
@@ -209,7 +209,7 @@ export class DocumentCloner {
 			try {
 				img.src = canvas.toDataURL();
 				return img;
-			} catch (e) {
+			} catch (_e) {
 				this.context.logger.info(`Unable to inline canvas contents, canvas is tainted`, canvas);
 			}
 		}
@@ -240,7 +240,7 @@ export class DocumentCloner {
 				}
 			}
 			return clonedCanvas;
-		} catch (e) {
+		} catch (_e) {
 			this.context.logger.info(`Unable to clone canvas as it is tainted`, canvas);
 		}
 
@@ -262,7 +262,7 @@ export class DocumentCloner {
 				}
 			}
 			return canvas;
-		} catch (e) {
+		} catch (_e) {
 			this.context.logger.info(`Unable to clone video as it is tainted`, video);
 		}
 
@@ -295,7 +295,7 @@ export class DocumentCloner {
 			if (isElementNode(child) && isSlotElement(child) && typeof child.assignedNodes === 'function') {
 				const assignedNodes = child.assignedNodes() as ChildNode[];
 				if (assignedNodes.length) {
-					assignedNodes.forEach((assignedNode) => this.appendChildNode(clone, assignedNode, copyStyles));
+					assignedNodes.forEach((assignedNode) => void this.appendChildNode(clone, assignedNode, copyStyles));
 				}
 			} else {
 				this.appendChildNode(clone, child, copyStyles);
@@ -380,7 +380,7 @@ export class DocumentCloner {
 		clone: Element,
 		style: CSSStyleDeclaration,
 		pseudoElt: PseudoElementType
-	): HTMLElement | void {
+	): HTMLElement | undefined {
 		if (!style) {
 			return;
 		}
@@ -510,14 +510,14 @@ const createIFrameContainer = (ownerDocument: Document, bounds: Bounds): HTMLIFr
 	return cloneIframeContainer;
 };
 
-const imageReady = (img: HTMLImageElement): Promise<Event | void | string> => {
+const imageReady = (img: HTMLImageElement): Promise<Event | undefined | string> => {
 	return new Promise((resolve) => {
 		if (img.complete) {
-			resolve();
+			resolve(undefined);
 			return;
 		}
 		if (!img.src) {
-			resolve();
+			resolve(undefined);
 			return;
 		}
 		img.onload = resolve;
@@ -596,8 +596,7 @@ const serializeDoctype = (doctype?: DocumentType | null): string => {
 
 const restoreOwnerScroll = (ownerDocument: Document | null, x: number, y: number) => {
 	if (
-		ownerDocument &&
-		ownerDocument.defaultView &&
+		ownerDocument?.defaultView &&
 		(x !== ownerDocument.defaultView.pageXOffset || y !== ownerDocument.defaultView.pageYOffset)
 	) {
 		ownerDocument.defaultView.scrollTo(x, y);

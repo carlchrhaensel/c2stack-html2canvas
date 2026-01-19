@@ -83,7 +83,7 @@ test.describe('html2canvas Basic Rendering', () => {
 			try {
 				const canvas = await (window as any).html2canvas(element);
 				return canvas instanceof HTMLCanvasElement;
-			} catch (e) {
+			} catch (_e) {
 				return false;
 			}
 		});

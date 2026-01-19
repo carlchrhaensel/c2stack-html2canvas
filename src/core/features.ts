@@ -80,7 +80,7 @@ const testSVG = (document: Document): boolean => {
 	try {
 		ctx.drawImage(img, 0, 0);
 		canvas.toDataURL();
-	} catch (e) {
+	} catch (_e) {
 		return false;
 	}
 	return true;

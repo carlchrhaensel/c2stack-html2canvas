@@ -1,5 +1,5 @@
 const Gradient = require('../../dist/npm/Gradient');
-const assert = require('assert');
+const assert = require('node:assert');
 
 describe('Gradient', () => {
 	describe('transformWebkitRadialGradientArgs', () => {

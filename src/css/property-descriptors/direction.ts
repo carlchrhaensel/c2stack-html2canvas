@@ -15,7 +15,6 @@ export const direction: IPropertyIdentValueDescriptor<DIRECTION> = {
 		switch (direction) {
 			case 'rtl':
 				return DIRECTION.RTL;
-			case 'ltr':
 			default:
 				return DIRECTION.LTR;
 		}

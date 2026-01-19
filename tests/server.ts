@@ -2,14 +2,14 @@ import {mkdirSync} from 'node:fs';
 import * as express from 'express';
 
 const cors = require('cors');
-const path = require('path');
+const path = require('node:path');
 const serveIndex = require('serve-index');
 const proxy = require('html2canvas-proxy');
 
 import yargs from 'yargs';
 import type {ScreenshotRequest} from './types';
 
-const fs = require('fs');
+const fs = require('node:fs');
 const bodyParser = require('body-parser');
 const filenamifyUrl = require('filenamify-url');
 

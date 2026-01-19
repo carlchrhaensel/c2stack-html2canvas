@@ -1,4 +1,4 @@
-import {deepStrictEqual} from 'assert';
+import {deepStrictEqual} from 'node:assert';
 import type {Context} from '../../../../core/context';
 import {type CSSFunction, Parser} from '../../../syntax/parser';
 import {TokenType} from '../../../syntax/tokenizer';

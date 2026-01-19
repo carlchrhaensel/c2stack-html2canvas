@@ -1,5 +1,5 @@
 const Color = require('../../dist/npm/Color').default;
-const assert = require('assert');
+const assert = require('node:assert');
 
 describe('Colors', () => {
 	describe('named colors', () => {

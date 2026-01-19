@@ -159,7 +159,7 @@ function parseRefTest(txt) {
 				}
 				default:
 					console.log(args);
-					throw new Error('Unhandled action ' + data.action);
+					throw new Error(`Unhandled action ${data.action}`);
 			}
 
 			return data;

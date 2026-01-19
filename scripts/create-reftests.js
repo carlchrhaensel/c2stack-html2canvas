@@ -1,6 +1,6 @@
 const {Chromeless} = require('chromeless');
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
+const fs = require('node:fs');
 const express = require('express');
 const reftests = require('../tests/reftests');
 

@@ -1,4 +1,4 @@
-import {deepEqual} from 'assert';
+import {deepEqual} from 'node:assert';
 import {Tokenizer, TokenType} from '../tokenizer';
 
 const tokenize = (value: string) => {

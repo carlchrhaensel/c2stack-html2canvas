@@ -1,4 +1,4 @@
-import {strictEqual} from 'assert';
+import {strictEqual} from 'node:assert';
 import type {Context} from '../../../core/context';
 import {Parser} from '../../syntax/parser';
 import {asString, color, isTransparent, pack} from '../color';

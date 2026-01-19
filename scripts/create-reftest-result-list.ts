@@ -1,5 +1,5 @@
-import {readdirSync, readFileSync, writeFileSync} from 'fs';
-import {resolve} from 'path';
+import {readdirSync, readFileSync, writeFileSync} from 'node:fs';
+import {resolve} from 'node:path';
 
 if (process.argv.length <= 2) {
 	console.log('No metadata path provided');

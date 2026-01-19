@@ -56,12 +56,12 @@ testList
 			before((done) => {
 				testContainer.onload = () => done();
 
-				testContainer.src = url + '?selenium&run=false&reftest&' + Math.random();
+				testContainer.src = `${url}?selenium&run=false&reftest&${Math.random()}`;
 				if (hasHistoryApi) {
 					// Chrome does not resolve relative background urls correctly inside of a nested iframe
 					try {
 						history.replaceState(null, '', url);
-					} catch (e) {}
+					} catch (_e) {}
 				}
 
 				document.body.appendChild(testContainer);
@@ -70,7 +70,7 @@ testList
 				if (hasHistoryApi) {
 					try {
 						history.replaceState(null, '', testRunnerUrl);
-					} catch (e) {}
+					} catch (_e) {}
 				}
 				document.body.removeChild(testContainer);
 			});
@@ -103,7 +103,7 @@ testList
 						canvas.width,
 						canvas.height
 					);
-				} catch (e) {
+				} catch (_e) {
 					throw new Error('Canvas is tainted');
 				}
 

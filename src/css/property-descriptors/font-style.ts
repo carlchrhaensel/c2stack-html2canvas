@@ -17,7 +17,6 @@ export const fontStyle: IPropertyIdentValueDescriptor<FONT_STYLE> = {
 				return FONT_STYLE.OBLIQUE;
 			case 'italic':
 				return FONT_STYLE.ITALIC;
-			case 'normal':
 			default:
 				return FONT_STYLE.NORMAL;
 		}

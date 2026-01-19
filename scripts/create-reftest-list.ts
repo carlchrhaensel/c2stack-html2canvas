@@ -1,6 +1,6 @@
-import {readFileSync, writeFileSync} from 'fs';
+import {readFileSync, writeFileSync} from 'node:fs';
+import {relative, resolve} from 'node:path';
 import {sync} from 'glob';
-import {relative, resolve} from 'path';
 
 const slash = require('slash');
 
