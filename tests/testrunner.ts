@@ -1,12 +1,7 @@
-// @ts-expect-error
-import Promise from 'es6-promise';
-// @ts-expect-error
 import {default as platform} from 'platform';
 import {ignoredTests, testList} from '../build/reftests';
 import type {ScreenshotRequest} from './types';
 
-// @ts-expect-error
-window.Promise = Promise;
 const testRunnerUrl = location.href;
 const hasHistoryApi = typeof window.history !== 'undefined' && typeof window.history.replaceState !== 'undefined';
 
