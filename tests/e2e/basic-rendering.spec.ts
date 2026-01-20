@@ -1,9 +1,11 @@
 import {expect, test} from '@playwright/test';
 
+const BASE_URL = 'http://localhost:8080';
+
 test.describe('html2canvas Basic Rendering', () => {
 	test.beforeEach(async ({page}) => {
 		// Navigate to test page
-		await page.goto('http://localhost:8080/tests/testrunner.html');
+		await page.goto(`${BASE_URL}/tests/testrunner.html`);
 	});
 
 	test('should load html2canvas library', async ({page}) => {
@@ -42,7 +44,7 @@ test.describe('html2canvas Basic Rendering', () => {
 			<!DOCTYPE html>
 			<html>
 				<head>
-					<script src="/dist/html2canvas.js"></script>
+					<script src="${BASE_URL}/dist/html2canvas.js"></script>
 				</head>
 				<body>
 					<div id="content" style="font-size: 20px; padding: 10px;">
@@ -67,7 +69,7 @@ test.describe('html2canvas Basic Rendering', () => {
 			<!DOCTYPE html>
 			<html>
 				<head>
-					<script src="/dist/html2canvas.js"></script>
+					<script src="${BASE_URL}/dist/html2canvas.js"></script>
 				</head>
 				<body>
 					<div id="content">
@@ -96,7 +98,7 @@ test.describe('html2canvas Basic Rendering', () => {
 			<!DOCTYPE html>
 			<html>
 				<head>
-					<script src="/dist/html2canvas.js"></script>
+					<script src="${BASE_URL}/dist/html2canvas.js"></script>
 				</head>
 				<body>
 					<div id="blue-box" style="width: 100px; height: 100px; background-color: rgb(0, 0, 255);"></div>
@@ -132,7 +134,7 @@ test.describe('html2canvas Basic Rendering', () => {
 
 test.describe('html2canvas Cross-browser Compatibility', () => {
 	test('should work in different browsers', async ({page, browserName}) => {
-		await page.goto('http://localhost:8080/tests/testrunner.html');
+		await page.goto(`${BASE_URL}/tests/testrunner.html`);
 
 		const result = await page.evaluate(async () => {
 			const div = document.createElement('div');
@@ -166,7 +168,7 @@ test.describe('html2canvas Options', () => {
 			<!DOCTYPE html>
 			<html>
 				<head>
-					<script src="/dist/html2canvas.js"></script>
+					<script src="${BASE_URL}/dist/html2canvas.js"></script>
 				</head>
 				<body>
 					<div id="content" style="width: 100px; height: 100px;">Test</div>
@@ -201,7 +203,7 @@ test.describe('html2canvas Options', () => {
 			<!DOCTYPE html>
 			<html>
 				<head>
-					<script src="/dist/html2canvas.js"></script>
+					<script src="${BASE_URL}/dist/html2canvas.js"></script>
 				</head>
 				<body>
 					<div id="content" style="width: 100px; height: 100px;">Test</div>

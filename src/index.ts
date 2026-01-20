@@ -24,6 +24,8 @@ export default html2canvas;
 
 if (typeof window !== 'undefined') {
 	CacheStorage.setContext(window);
+	// @ts-expect-error window typing
+	window.html2canvas = html2canvas;
 }
 
 const renderElement = async (element: HTMLElement, opts: Partial<Options>): Promise<HTMLCanvasElement> => {
