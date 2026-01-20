@@ -192,10 +192,11 @@ jobs:
         run: DISPLAY=:99 bun run test:browser
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: reftest-results
           path: tmp/reftests
-          if-no-files-found: error
+          if-no-files-found: ignore
   publish:
     runs-on: ubuntu-latest
     name: Publish
