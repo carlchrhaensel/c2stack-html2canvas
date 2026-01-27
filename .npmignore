@@ -1,19 +1,42 @@
+# Development files
 .github/
 .idea/
 .rpt2_cache
-build/
-configs/
-docs/
-examples/
-scripts/
+.vscode/
+.husky/
+.changeset/
+
+# Source files
 src/
 tests/
+build/
+scripts/
+examples/
+docs/
 www/
 tmp/
+
+# Test artifacts
+test-results/
+playwright-report/
+coverage/
+
+# Build configs
+*.config.ts
+*.config.js
+biome.json
+tsconfig.json
+bunfig.toml
+bun.lock
 *.iml
 .babelrc
 .editorconfig
 .eslintrc
 .npmignore
-jest.config.js
-rollup.config.ts
+.lintstagedrc.json
+.biomeignore
+
+# Documentation (keep only essential ones)
+TODO.md
+SECURITY.md
+CONTRIBUTING.md

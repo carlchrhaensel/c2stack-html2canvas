@@ -28,7 +28,7 @@
 	"packageManager": "bun@1.1.42",
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:carlchrhaensel/c2stack-html2canvas.git"
+		"url": "git+ssh://git@github.com/carlchrhaensel/c2stack-html2canvas.git"
 	},
 	"bugs": {
 		"url": "https://github.com/carlchrhaensel/c2stack-html2canvas/issues"
