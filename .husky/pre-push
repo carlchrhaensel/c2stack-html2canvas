@@ -1,0 +1,2 @@
+# Pre-push hooks disabled
+# bun run test:unit

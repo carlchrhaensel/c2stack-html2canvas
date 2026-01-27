@@ -4,7 +4,7 @@
     <title>element render test</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script>
-        h2cOptions = {onclone: function(document) {
+        h2cOptions = {onclone: (document) => {
             var remove = document.querySelector('.ignored');
             remove.parentNode.removeChild(remove);
         }};

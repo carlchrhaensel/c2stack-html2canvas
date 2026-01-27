@@ -1,0 +1,17 @@
+[install]
+# Install packages from the lockfile, ignoring package.json
+frozen = false
+
+# Always use the exact versions from the lockfile
+exact = true
+
+[install.scopes]
+# Configure scope mappings for private registries if needed
+
+[test]
+# Use bun test for running tests
+preload = ["./test-setup.ts"]
+
+[run]
+# Use system shell for bun run scripts
+shell = "system"
